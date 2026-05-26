@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>New Generation University | Center for Excellence</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--primary:#800000;
+--secondary:#4a0000;
+--accent:#FF9C40;
+--light:#faf8f5;
+--dark:#111111;
+--glass:rgba(255,255,255,.08);
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Outfit',sans-serif;
+background:white;
+color:#222;
+overflow-x:hidden;
+}
+
+/* NAVIGATION */
+
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+z-index:1000;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:18px 7%;
+
+background:rgba(0,0,0,.25);
+backdrop-filter:blur(15px);
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+color:white;
+font-weight:700;
+font-size:1.1rem;
+}
+
+.logo img{
+height:55px;
+width:auto;
+border-radius:50%;
+background:white;
+padding:4px;
+}
+
+.nav-links{
+display:flex;
+gap:35px;
+}
+
+.nav-links a{
+text-decoration:none;
+color:white;
+font-weight:500;
+transition:.3s;
+}
+
+.nav-links a:hover{
+color:var(--accent);
+}
+
+.apply-btn{
+padding:12px 28px;
+background:var(--accent);
+color:white;
+text-decoration:none;
+font-weight:600;
+border-radius:40px;
+transition:.3s;
+}
+
+.apply-btn:hover{
+transform:translateY(-3px);
+}
+
+/* HERO */
+
+.hero{
+position:relative;
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+overflow:hidden;
+}
+
+.hero::before{
+content:"";
+position:absolute;
+inset:0;
+
+background:
+linear-gradient(
+rgba(0,0,0,.55),
+rgba(74,0,0,.75)
+),
+
+url("campus-main.jpg");
+
+background-size:cover;
+background-position:center;
+animation:zoomHero 18s ease-in-out infinite alternate;
+}
+
+@keyframes zoomHero{
+from{
+transform:scale(1);
+}
+to{
+transform:scale(1.12);
+}
+}
+
+.hero-content{
+position:relative;
+z-index:5;
+max-width:900px;
+padding:20px;
+color:white;
+}
+
+.badge{
+display:inline-block;
+
+padding:10px 20px;
+margin-bottom:25px;
+
+background:rgba(255,255,255,.1);
+backdrop-filter:blur(10px);
+
+border:1px solid rgba(255,255,255,.2);
+
+border-radius:40px;
+
+font-size:.9rem;
+letter-spacing:1px;
+}
+
+.hero h1{
+font-family:'Playfair Display',serif;
+font-size:5rem;
+line-height:1.1;
+margin-bottom:25px;
+}
+
+.hero p{
+font-size:1.2rem;
+max-width:750px;
+margin:auto;
+opacity:.95;
+}
+
+.hero-buttons{
+margin-top:40px;
+
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:15px 35px;
+border-radius:40px;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
+}
+
+.btn-primary{
+background:var(--accent);
+color:white;
+}
+
+.btn-secondary{
+border:2px solid white;
+color:white;
+}
+
+.btn:hover{
+transform:translateY(-5px);
+}
+
+/* STATS */
+
+.stats{
+background:white;
+padding:80px 7%;
+}
+
+.stats-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:30px;
+}
+
+.stat-card{
+background:white;
+
+padding:40px 20px;
+
+border-radius:20px;
+
+box-shadow:
+0 10px 30px rgba(0,0,0,.08);
+
+text-align:center;
+
+transition:.4s;
+}
+
+.stat-card:hover{
+transform:translateY(-8px);
+}
+
+.stat-card h2{
+font-size:3rem;
+color:var(--primary);
+margin-bottom:10px;
+}
+
+.stat-card p{
+font-weight:500;
+}
+
+/* WHY NGU */
+
+.section{
+padding:110px 7%;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:70px;
+}
+
+.section-title span{
+color:var(--accent);
+font-weight:600;
+letter-spacing:2px;
+text-transform:uppercase;
+}
+
+.section-title h2{
+font-family:'Playfair Display',serif;
+font-size:3rem;
+margin-top:15px;
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.feature{
+padding:40px;
+border-radius:20px;
+background:#fff;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+transition:.4s;
+}
+
+.feature:hover{
+transform:translateY(-10px);
+}
+
+.feature h3{
+margin-bottom:15px;
+color:var(--primary);
+}
+
+/* VALUES */
+
+.values{
+background:linear-gradient(
+135deg,
+var(--primary),
+var(--secondary)
+);
+
+color:white;
+text-align:center;
+}
+
+.values blockquote{
+font-family:'Playfair Display',serif;
+font-size:2.2rem;
+max-width:900px;
+margin:auto;
+line-height:1.5;
+}
+
+.values p{
+margin-top:25px;
+opacity:.9;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+.hero h1{
+font-size:3rem;
+}
+
+.nav-links{
+display:none;
+}
+
+.hero-buttons{
+flex-direction:column;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+
+<nav>
+
+<div class="logo">
+<img src="ngu-logo.png" alt="">
+<div>
+NEW GENERATION<br>
+UNIVERSITY
+</div>
+</div>
+
+<div class="nav-links">
+<a href="#">Home</a>
+<a href="#">Academics</a>
+<a href="#">Campus</a>
+<a href="#">Admissions</a>
+<a href="#">Contact</a>
+</div>
+
+<a href="#" class="apply-btn">Apply Now</a>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="badge">
+CENTER FOR EXCELLENCE • EST. 2010
+</div>
+
+<h1>
+New Generation University
+</h1>
+
+<p>
+A leading institution committed to academic excellence,
+leadership development, innovation, and community service.
+Building future professionals through quality education,
+modern infrastructure, and a student-centered learning environment.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#" class="btn btn-primary">
+Explore Programs
+</a>
+
+<a href="#" class="btn btn-secondary">
+Apply Today
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- STATS -->
+
+<section class="stats">
+
+<div class="stats-grid">
+
+<div class="stat-card">
+<h2>7,544+</h2>
+<p>Graduates Since 2010</p>
+</div>
+
+<div class="stat-card">
+<h2>15</h2>
+<p>Master Programs</p>
+</div>
+
+<div class="stat-card">
+<h2>30+</h2>
+<p>Degree Programs</p>
+</div>
+
+<div class="stat-card">
+<h2>2</h2>
+<p>Campuses</p>
+</div>
+
+<div class="stat-card">
+<h2>100%</h2>
+<p>University-Owned Campus Infrastructure</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- WHY NGU -->
+
+<section class="section">
+
+<div class="section-title">
+<span>Why Choose NGU</span>
+<h2>The Difference is Clear</h2>
+</div>
+
+<div class="features">
+
+<div class="feature">
+<h3>University-Owned Campus</h3>
+<p>
+The only private university in Somaliland operating on
+its own permanent purpose-built campus infrastructure.
+</p>
+</div>
+
+<div class="feature">
+<h3>Free Transportation</h3>
+<p>
+University-owned transportation services support students
+and faculty from different parts of the city.
+</p>
+</div>
+
+<div class="feature">
+<h3>Faculty Support</h3>
+<p>
+Guest house facilities and complimentary meals help faculty
+focus on teaching and research excellence.
+</p>
+</div>
+
+<div class="feature">
+<h3>Academic Excellence</h3>
+<p>
+Modern programs, experienced faculty, and a commitment to
+developing future leaders and professionals.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- VALUES -->
+
+<section class="section values">
+
+<blockquote>
+“Nabbad baa caano lagu nuuga,
+nabbad baa wax lagu bartaa.”
+</blockquote>
+
+<p>
+“In peace, milk is enjoyed; in peace, knowledge is learned.”
+</p>
+
+</section>
+
+</body>
+</html>
